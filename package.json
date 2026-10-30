@@ -1,0 +1,26 @@
+{
+  "name": "github-actions-hands-on",
+  "version": "1.0.0",
+  "description": "Hands on practical exposure on Github Actions",
+  "main": "server.js",
+  "scripts": {
+    "build": "node --check server.js",
+    "start": "node server.js",
+    "test": "node --test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/deepak-learnings/github-actions-hands-on.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/deepak-learnings/github-actions-hands-on/issues"
+  },
+  "homepage": "https://github.com/deepak-learnings/github-actions-hands-on#readme",
+  "dependencies": {
+    "node-localstorage": "^3.0.5"
+  }
+}
