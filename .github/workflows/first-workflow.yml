@@ -15,7 +15,7 @@ jobs:
           node -v
           npm -v
   run-build:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-latests
     steps:
       - name: prallel job demo
         run: |
