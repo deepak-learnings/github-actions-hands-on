@@ -1,5 +1,6 @@
 name: Workflow Commands
 on:
+  push:  
   workflow_dispatch:
 
 jobs:
@@ -12,3 +13,14 @@ jobs:
         run: echo "::warning::This is an example warning message"
       - name: Set an info annotation
         run: echo "::info::This is an example info message"
+      - name: Display working Directory and Variables
+        run: |
+          echo "Working Directory: $GITHUB_WORKSPACE"
+          echo "Repository: $GITHUB_REPOSITORY"
+          echo "Actor: $GITHUB_ACTOR"
+          echo "Event Name: $GITHUB_EVENT_NAME"
+          echo "Event Path: $GITHUB_EVENT_PATH"
+          echo "SHA: $GITHUB_SHA"
+          echo "Ref: $GITHUB_REF"
+          echo "Workflow: $GITHUB_WORKFLOW"
+          echo "Action: $GITHUB_ACTION"  
