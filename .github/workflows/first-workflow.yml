@@ -15,9 +15,10 @@ jobs:
           node -v
           npm -v
   run-build:
-    runs-on: ubuntu-latests
+    runs-on: ubuntu-latest
     steps:
       - name: prallel job demo
         run: |
           echo "This is a parallel job"
           echo "Running in parallel with other jobs"
+          hello
