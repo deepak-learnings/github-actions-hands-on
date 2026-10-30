@@ -1,6 +1,5 @@
 name: My First Workflow
 on:
-  push:
   workflow_dispatch:
 
 jobs:
@@ -21,4 +20,4 @@ jobs:
         run: |
           echo "This is a parallel job"
           echo "Running in parallel with other jobs"
-          hello
+
