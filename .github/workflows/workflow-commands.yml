@@ -1,0 +1,14 @@
+name: Workflow Commands
+on:
+  workflow_dispatch:
+
+jobs:
+  testing-wf-commands:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Set an error annotation
+        run: echo "::error::This is an example error message"
+      - name: Set a warning annotation
+        run: echo "::warning::This is an example warning message"
+      - name: Set an info annotation
+        run: echo "::info::This is an example info message"
