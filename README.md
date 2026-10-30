@@ -1,3 +1,5 @@
+[![Node server CI](https://github.com/deepak-learnings/github-actions-hands-on/actions/workflows/node-server-ci.yml/badge.svg)](https://github.com/deepak-learnings/github-actions-hands-on/actions/workflows/node-server-ci.yml)
+
 # github-actions-hands-on
 Hands on practical exposure on Github Actions
 
