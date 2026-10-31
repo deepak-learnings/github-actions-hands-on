@@ -25,7 +25,6 @@ jobs:
           echo ${{ github.event_name }}
           echo ${{ github.event.action }}
           echo ${{ github.event.label.name }}
-          echo ${{ tojson(github)}}
           echo ${{secrets.TEST_SECRET}}
       - name: Check repository secret
         env:
