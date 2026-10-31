@@ -26,6 +26,7 @@ jobs:
           echo ${{ github.event.action }}
           echo ${{ github.event.label.name }}
           echo ${{secrets.TEST_SECRET}}
+          echo "Virtual Users: ${{ vars.VU_USERS || 'not set' }}"
       - name: Check repository secret
         env:
           MY_SECRET: ${{ secrets.TEST_SECRET }}
