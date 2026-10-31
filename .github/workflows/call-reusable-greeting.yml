@@ -1,0 +1,16 @@
+name: Call Reusable Greeting
+
+on:
+  workflow_dispatch:
+    inputs:
+      name:
+        description: Name to pass to the reusable workflow
+        required: true
+        default: GitHub Actions learner
+        type: string
+
+jobs:
+  call-greeting:
+    uses: ./.github/workflows/reusable-greeting.yml
+    with:
+      name: ${{ inputs.name }}

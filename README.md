@@ -20,3 +20,10 @@ Run `npm run build` for a syntax check and `npm test` for the unit tests.
 The `node-server-ci.yml` workflow runs the test job only after the build job
 succeeds (`needs: build`); GitHub Actions jobs use separate runners, so each
 job checks out the code and installs dependencies independently.
+
+## Reusable workflows with `workflow_call`
+
+The `reusable-greeting.yml` workflow exposes a required `name` input with
+`workflow_call`. The `call-reusable-greeting.yml` workflow can be started
+manually from the **Actions** tab; enter a name and it passes that value to the
+reusable workflow using `with`. The called workflow then greets that name.

@@ -1,0 +1,15 @@
+name: Checkout and List Files
+
+on:
+  push:
+  workflow_dispatch:
+
+jobs:
+  checkout-and-list:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: List repository files
+        run: find . -type f -not -path './.git/*' -print
