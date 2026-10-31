@@ -22,3 +22,17 @@ jobs:
         run: |
           echo "This is a parallel job"
           echo "Running in parallel with other jobs"
+          echo ${{ github.event_name }}
+          echo ${{ github.event.action }}
+          echo ${{ github.event.label.name }}
+          echo ${{secrets.TEST_SECRET}}
+      - name: Check repository secret
+        env:
+          MY_SECRET: ${{ secrets.TEST_SECRET }}
+        run: |
+          if [ -n "$MY_SECRET" ]; then
+            echo "Secret is set"
+          else
+            echo "Secret is missing"
+            exit 1
+          fi  
