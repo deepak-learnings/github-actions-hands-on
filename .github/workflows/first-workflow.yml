@@ -22,3 +22,6 @@ jobs:
         run: |
           echo "This is a parallel job"
           echo "Running in parallel with other jobs"
+          echo ${{ github.event_name }}
+          echo ${{ github.event.action }}
+          echo ${{ github.event.label.name }}
