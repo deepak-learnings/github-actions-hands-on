@@ -2,7 +2,8 @@ name: My First Workflow
 on:
   push:
   workflow_dispatch:
-
+  label:
+    types: [created, deleted]
 jobs:
   run-shell-commands:
     runs-on: ubuntu-latest
@@ -17,7 +18,7 @@ jobs:
   run-build:
     runs-on: ubuntu-latest
     steps:
-      - name: prallel job demo
+      - name: parallel job demo
         run: |
           echo "This is a parallel job"
           echo "Running in parallel with other jobs"
