@@ -27,3 +27,16 @@ The `reusable-greeting.yml` workflow exposes a required `name` input with
 `workflow_call`. The `call-reusable-greeting.yml` workflow can be started
 manually from the **Actions** tab; enter a name and it passes that value to the
 reusable workflow using `with`. The called workflow then greets that name.
+
+## [`workflow_run`](https://docs.github.com/en/actions/reference/workflows-and-actions/events-that-trigger-workflows#workflow_run) sample example
+
+The `workflow-run-follow-up.yml` workflow runs after the `Node server CI`
+workflow completes. `workflows` selects the source workflow by its displayed
+name, and `types: [completed]` means the follow-up runs after either a success
+or a failure. It reports the source run's name, branch, and conclusion.
+
+To try it, make sure both workflow files are on the default branch, then run
+**Node server CI** from the **Actions** tab. After that run finishes, look for
+**Workflow Run Follow-up** in the Actions tab. This follow-up only reports
+metadata; avoid checking out or running code from untrusted pull requests in a
+`workflow_run` workflow, since it can have access to elevated permissions.
