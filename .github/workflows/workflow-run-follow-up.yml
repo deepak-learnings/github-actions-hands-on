@@ -1,0 +1,22 @@
+name: Workflow Run Follow-up
+
+on:
+  workflow_run:
+    workflows: ["Node server CI"]
+    types: [completed]
+
+permissions:
+  contents: read
+
+jobs:
+  report:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Report the completed workflow
+        env:
+          SOURCE_WORKFLOW: ${{ github.event.workflow_run.name }}
+          SOURCE_CONCLUSION: ${{ github.event.workflow_run.conclusion }}
+          SOURCE_BRANCH: ${{ github.event.workflow_run.head_branch }}
+        run: |
+          echo "Workflow '$SOURCE_WORKFLOW' completed on branch '$SOURCE_BRANCH'."
+          echo "Conclusion: $SOURCE_CONCLUSION"
